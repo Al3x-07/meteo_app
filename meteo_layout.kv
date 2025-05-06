@@ -1,0 +1,129 @@
+<MeteoApp>:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 15
+    background_color: 0.9, 0.9, 0.9, 1  # Colore di sfondo della schermata principale
+
+    # Barra con il nome dell'app
+    BoxLayout:
+        size_hint_y: None
+        height: '50dp'
+        spacing: 10
+        canvas.before:
+            Color:
+                rgba: 0.2, 0.4, 0.6, 1  # Colore di sfondo della barra
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            text: 'App Meteo - M.D.'
+            font_size: '24sp'
+            bold: True
+            color: 1, 1, 1, 1  # Colore del testo (bianco)
+            halign: 'center'
+
+    # Etichetta di stato
+    Label:
+        id: status
+        text: "Caricamento dati meteo..."
+        size_hint_y: None
+        height: '30dp'
+        color: 1, 0, 0, 1  # Colore rosso per lo stato
+        halign: "center"
+
+    # Dati meteo con sfondo alternato
+    BoxLayout:
+        Label:
+            text: 'Temperatura Max:'
+            size_hint_x: 0.4
+            color: 0.3, 0.3, 0.3, 1
+        TextInput:
+            id: temp_max
+            readonly: True
+            size_hint_x: 0.6
+            background_normal: ''
+            background_color: 0.2, 0.6, 0.8, 1  # Colore di sfondo dei TextInput
+
+    BoxLayout:
+        Label:
+            text: 'Temperatura Min:'
+            size_hint_x: 0.4
+            color: 0.3, 0.3, 0.3, 1
+        TextInput:
+            id: temp_min
+            readonly: True
+            size_hint_x: 0.6
+            background_normal: ''
+            background_color: 0.2, 0.6, 0.8, 1
+
+    BoxLayout:
+        Label:
+            text: 'Alba:'
+            size_hint_x: 0.4
+            color: 0.3, 0.3, 0.3, 1
+        TextInput:
+            id: sunrise
+            readonly: True
+            size_hint_x: 0.6
+            background_normal: ''
+            background_color: 0.2, 0.6, 0.8, 1
+
+    BoxLayout:
+        Label:
+            text: 'Tramonto:'
+            size_hint_x: 0.4
+            color: 0.3, 0.3, 0.3, 1
+        TextInput:
+            id: sunset
+            readonly: True
+            size_hint_x: 0.6
+            background_normal: ''
+            background_color: 0.2, 0.6, 0.8, 1
+
+    BoxLayout:
+        Label:
+            text: 'Durata Luce:'
+            size_hint_x: 0.4
+            color: 0.3, 0.3, 0.3, 1
+        TextInput:
+            id: daylight
+            readonly: True
+            size_hint_x: 0.6
+            background_normal: ''
+            background_color: 0.2, 0.6, 0.8, 1
+
+    BoxLayout:
+        Label:
+            text: 'Ore di Sole:'
+            size_hint_x: 0.4
+            color: 0.3, 0.3, 0.3, 1
+        TextInput:
+            id: sunshine
+            readonly: True
+            size_hint_x: 0.6
+            background_normal: ''
+            background_color: 0.2, 0.6, 0.8, 1
+
+    BoxLayout:
+        Label:
+            text: 'Indice UV:'
+            size_hint_x: 0.4
+            color: 0.3, 0.3, 0.3, 1
+        TextInput:
+            id: uv_index
+            readonly: True
+            size_hint_x: 0.6
+            background_normal: ''
+            background_color: 0.2, 0.6, 0.8, 1
+
+    BoxLayout:
+        Label:
+            text: 'Precipitazioni (%):'
+            size_hint_x: 0.4
+            color: 0.3, 0.3, 0.3, 1
+        TextInput:
+            id: precipitation
+            readonly: True
+            size_hint_x: 0.6
+            background_normal: ''
+            background_color: 0.2, 0.6, 0.8, 1

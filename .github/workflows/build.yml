@@ -1,0 +1,40 @@
+name: Build APK
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y git zip unzip openjdk-11-jdk python3-pip
+        pip install --upgrade pip
+        pip install Cython==0.29.19 virtualenv
+        pip install buildozer
+        sudo apt install -y build-essential ccache libffi-dev libssl-dev \
+             libsqlite3-dev libpng-dev libjpeg-dev libpcap-dev \
+             zlib1g-dev libncurses5 libncurses5-dev libncursesw5 \
+             libncursesw5-dev libtinfo-dev pkg-config
+
+    - name: Initialize buildozer
+      run: |
+        buildozer android debug
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v2
+      with:
+        name: my-app
+        path: bin/*.apk

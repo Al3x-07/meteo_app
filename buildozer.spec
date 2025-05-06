@@ -7,7 +7,7 @@ title = MeteoApp
 package.name = meteoapp
 
 # Dominio (può essere anche org.tuinome, importante è che sia unico)
-package.domain = org.matteo
+package.domain = org.barra
 
 # Cartella dove si trova il tuo codice
 source.dir = .
